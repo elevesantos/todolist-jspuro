@@ -1,0 +1,140 @@
+/*
+primary: "#2980B9";
+secondary: "#0D476C";
+lightGray: "#ecf0f1";
+darkGray: "#7f8c8d";
+*/
+
+@import 'fonts.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    height: auto; 
+    font-family: "GoodLight", Helvetica, Arial, sans-serif;
+    text-rendering: optimizelegibility; 
+    -webkit-font-smoothing: antialiased;
+}
+
+.--small { font-size: 9px};
+.--medium { font-size: 12px};
+.--large { font-size: 17px};
+
+.--center { text-align: center; }
+.--right { text-align: right; }
+.--left { text-align: left; }
+.--justify { text-align: justify; }
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+}
+
+.container--center {
+    align-items: center;
+    justify-content: center;
+}
+
+/* TODOS */
+.todos {
+    margin-top: 200px;
+    width: 100%;
+}
+.todos__form {
+    width: 100%;
+}
+.todos__label {
+    font-size: 1.5em;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.todos__input {
+    font-size: 1.8em;
+    font-weight: 300;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: -9px;
+    transform: 500ms all ease-in-out;
+    border-radius: 5px;
+    border: 1px solid #7f8c8d;
+    color: black;
+}
+
+/* TODO */
+.todo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.todo + .todo {
+    margin-top: 30px;
+}
+.todo.checked .todo__title,
+.todo.checked .todo__subtitle {
+    text-decoration: line-through;
+}
+.todo__title {
+    text-transform: lowercase;
+}
+.todo__title--checked {
+    text-decoration: line-through;
+}
+.todo__subtitle {}
+.todo__content {
+    max-width: 80%;
+    display: inline-block;
+}
+
+
+.checkbox {
+    width: auto;
+    justify-self: flex-end;
+    display: inline-block;
+}
+.checkbox__input{
+    display: none;
+}
+.checkbox__input + .checkbox__check::before {
+    content: "\f096";
+    display:block;
+    font:normal normal normal 2em/1 FontAwesome;
+    text-rendering:auto;
+    width: 1em;
+    margin-left: 5px;
+    margin-top: 15px;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    speak: none;
+}
+.checkbox__input:checked + .checkbox__check::before{
+    content: "\f14a";
+    animation: tick 150ms ease-in;
+}
+
+@keyframes tick {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
