@@ -65,7 +65,6 @@ function atualizaTitulo() {
             let novoTitulo = handleTitulo(data);0
             todoAtual.childNodes[0].childNodes[0].innerText = novoTitulo;
         }
-        console.log("teste");
     }
 }
 
@@ -117,6 +116,11 @@ function checkboxComponent() {
     checkbox__label.appendChild(checkbox__input);
     checkbox__label.appendChild(checkbox__check);
     checkbox.appendChild(checkbox__label);
+
+    checkbox__input.addEventListener("click", function(e) {
+        let todo = this.parentElement.parentElement.parentElement;
+        todo.classList.toggle("checked");
+    });
 
     return checkbox;
 }
