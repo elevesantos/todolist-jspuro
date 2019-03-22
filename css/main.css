@@ -47,9 +47,16 @@ body {
     justify-content: center;
 }
 
+/* HEADER */
+header.header {
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+}
+
 /* TODOS */
 .todos {
-    margin-top: 200px;
+    margin-top: 50px;
     width: 100%;
 }
 .todos__form {
@@ -84,7 +91,7 @@ body {
     margin-top: 30px;
 }
 .todo.checked .todo__title,
-.todo.checked .todo__subtitle {
+.todo.checked .todo__input {
     text-decoration: line-through;
 }
 .todo__title {
@@ -93,9 +100,13 @@ body {
 .todo__title--checked {
     text-decoration: line-through;
 }
-.todo__subtitle {}
+.todo__input {
+    font-size: 20px;
+    border: none;
+    width: 100%;
+}
 .todo__content {
-    max-width: 80%;
+    width: 80%;
     display: inline-block;
 }
 
