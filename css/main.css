@@ -104,6 +104,7 @@ header.header {
     font-size: 20px;
     border: none;
     width: 100%;
+    background: transparent;
 }
 .todo__content {
     width: 80%;
