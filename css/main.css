@@ -86,6 +86,7 @@ header.header {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    transition: 500ms opacity ease-in-out;
 }
 .todo + .todo {
     margin-top: 30px;
