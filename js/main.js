@@ -1,6 +1,44 @@
-window.onload = function() {
-    setInterval(atualizaTitulo, 10000)
-};
+window.onload = init();
+
+function init() {
+    let rootEl = document.getElementById("root");
+
+    let header = document.createElement("header");
+    let i = document.createElement("i");
+    let main = document.createElement("main");
+    let container = document.createElement("div");
+    let todos = document.createElement("section");
+    let todos__list = document.createElement("div");
+    let form = document.createElement("form");
+    let todos__label = document.createElement("label");
+    let todos__input = document.createElement("input");
+    
+    header.className = "header";
+    i.className = "fa fa-check-square fa-5x";
+    container.className = "container";
+    todos.className = "todos";
+    todos__list.classList = "todos__list";
+    form.className = "todos__form";
+    form.id = "todos__form";
+    todos__label.className = "todos__label";
+    todos__label.for = "todos__label";
+    todos__label.innerText = "Digite o que tem a fazer:";
+    todos__input.id = "todos__input";
+    todos__input.className = "todos__input";
+    todos__input.name = "todos__input";
+
+    header.appendChild(i);
+    form.appendChild(todos__label);
+    form.appendChild(todos__input);
+    todos.appendChild(form);
+    todos.appendChild(todos__list);
+    container.appendChild(todos);
+    main.appendChild(container);
+    rootEl.appendChild(header);
+    rootEl.appendChild(main);   
+    
+    setInterval(atualizaTitulo, 10000);
+}
 
 const todos__form = document.getElementById("todos__form");
 todos__form.addEventListener("submit", function(e) {
@@ -55,6 +93,7 @@ function todoComponent(valorTodo, dataTodo) {
 }
 
 function atualizaTitulo() {
+    console.log("teste");
     let todos__list = document.querySelector(".todos__list");
     if ( todos__list.childNodes.length > 0 ) {
         let max = todos__list.childNodes.length;
