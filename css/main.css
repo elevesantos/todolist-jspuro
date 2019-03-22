@@ -47,6 +47,10 @@ body {
     justify-content: center;
 }
 
+#root {
+    transition: 400ms opacity ease-in-out;
+}
+
 /* HEADER */
 header.header {
     width: 100%;

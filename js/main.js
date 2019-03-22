@@ -2,6 +2,7 @@ window.onload = init();
 
 function init() {
     let rootEl = document.getElementById("root");
+    rootEl.style = "opacity: 0";
 
     let header = document.createElement("header");
     let i = document.createElement("i");
@@ -36,6 +37,10 @@ function init() {
     main.appendChild(container);
     rootEl.appendChild(header);
     rootEl.appendChild(main);   
+
+    setTimeout(function() {
+        rootEl.style = "opacity: 1";
+    }, 300);
     
     setInterval(atualizaTitulo, 10000);
 }
